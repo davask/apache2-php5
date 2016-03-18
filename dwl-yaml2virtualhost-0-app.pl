@@ -23,6 +23,7 @@ for (my $i = 0; $i < @{$projects}; $i++) {
         allow from 172.17.0.1 #docker0
         AllowOverride All
     </Directory>
+</VirtualHost>
 ';
         close $fh;
     }
