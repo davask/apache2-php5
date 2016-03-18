@@ -19,8 +19,8 @@ for (my $i = 0; $i < @{$projects}; $i++) {
     <Directory /var/www/html>
         Order deny,allow
         deny from all
-        # allow from all
-        allow from 172.17.0.1 #docker0
+        allow from all
+        # allow from 172.17.0.1 # TODO check how to dynamically get the eth0 ip
         AllowOverride All
     </Directory>
 </VirtualHost>
