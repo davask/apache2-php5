@@ -10,7 +10,7 @@ for (my $i = 0; $i < @{$projects}; $i++) {
         my $virtualhost = '/etc/apache2/sites-enabled/' . $projects->[$i]->{domain} . '-' . $projects->[$i]->{env}->[$y]->{subdomain} . '.conf';
         open(my $fh, '>', $virtualhost) or die "Could not open file '$virtualhost' $!";
         print $fh '# generated virtualhost by docker image davask/apache2-php5
-<VirtualHost *:80>
+<VirtualHost *:' . $projects->[$i]->{env}->[$y]->{port} . '>
     ServerAdmin contact@davaskweblimited.com
 
     DocumentRoot /var/www/html
