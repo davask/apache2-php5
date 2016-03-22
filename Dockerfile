@@ -13,11 +13,6 @@ RUN apt-get install -y php5-mcrypt
 RUN apt-get install -y php5-mysql
 
 RUN apt-get install -y apache2-utils
-RUN apt-get install -y cpanminus
-
-RUN rm -rf /var/lib/apt/lists/*
-
-RUN cpanm YAML::XS
 
 RUN rm -rf /var/lib/apt/lists/*
 
