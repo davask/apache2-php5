@@ -21,6 +21,4 @@ RUN cpanm YAML::XS
 
 RUN rm -rf /var/lib/apt/lists/*
 
-COPY ./dwl-yaml2virtualhost-0-app.pl /tmp/dwl-yaml2virtualhost-0-app.pl
-COPY ./dwl-env2yaml-0-app.sh /tmp/dwl-env2yaml-0-app.sh
-COPY ./dwl-init-2-app-reverse.sh /tmp/dwl-init-2-app-reverse.sh
+COPY ./dwl-init-2-php5.sh /tmp/dwl-init-2-php5.sh
