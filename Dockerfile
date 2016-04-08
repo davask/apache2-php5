@@ -3,7 +3,7 @@ MAINTAINER davask <contact@davaskweblimited.com>
 
 LABEL dwl.app.language="php5"
 
-# disable interactive functions
+#  disable interactive functions
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
