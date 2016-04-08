@@ -16,4 +16,5 @@ RUN apt-get install -y apache2-utils
 
 RUN rm -rf /var/lib/apt/lists/*
 
+COPY ./dwl-wordpress-php5-apache2-php.ini /etc/php5/apache2/php.ini
 COPY ./dwl-init-2-php5.sh /tmp/dwl-init-2-php5.sh
