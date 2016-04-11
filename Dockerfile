@@ -1,4 +1,4 @@
-FROM davask/d-apache2
+FROM davask/d-apache2:latest
 MAINTAINER davask <contact@davaskweblimited.com>
 
 LABEL dwl.app.language="php5"
@@ -8,9 +8,7 @@ RUN apt-get install -y php5
 RUN apt-get install -y libapache2-mod-php5
 RUN apt-get install -y php5-mcrypt
 RUN apt-get install -y php5-mysql
-
 RUN apt-get install -y apache2-utils
-
 RUN rm -rf /var/lib/apt/lists/*
 
 # Copy instantiation specific file
