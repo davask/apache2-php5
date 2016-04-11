@@ -13,4 +13,7 @@ RUN apt-get install -y apache2-utils
 
 RUN rm -rf /var/lib/apt/lists/*
 
-COPY ./dwl-init-2-php5.sh /tmp/dwl-init-2-php5.sh
+# Copy instantiation specific file
+COPY ./php5.sh $DWL_INIT_DIR/$DWL_INIT_COUNT-php5.sh
+# update counter for next container
+RUN DWL_INIT_COUNT=$(($DWL_INIT_COUNT+1))
