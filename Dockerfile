@@ -14,4 +14,4 @@ RUN rm -rf /var/lib/apt/lists/*
 # Copy instantiation specific file
 COPY ./php5.sh $DWL_INIT_DIR/$DWL_INIT_COUNT-php5.sh
 # update counter for next container
-RUN DWL_INIT_COUNT=$(($DWL_INIT_COUNT+1))
+ENV DWL_INIT_COUNT $(($DWL_INIT_COUNT+1))
