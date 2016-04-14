@@ -9,9 +9,10 @@ RUN apt-get install -y libapache2-mod-php5
 RUN apt-get install -y php5-mcrypt
 RUN apt-get install -y php5-mysql
 RUN apt-get install -y apache2-utils
+RUN apt-get install -y sendmail
 RUN rm -rf /var/lib/apt/lists/*
 
+# Declare instantiation counter
+ENV DWL_INIT_COUNT 2
 # Copy instantiation specific file
 COPY ./php5.sh $DWL_INIT_DIR/$DWL_INIT_COUNT-php5.sh
-# update counter for next container
-ENV DWL_INIT_COUNT $(($DWL_INIT_COUNT+1))
