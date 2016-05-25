@@ -8,6 +8,7 @@ RUN apt-get install -y php5
 RUN apt-get install -y libapache2-mod-php5
 RUN apt-get install -y php5-mcrypt
 RUN apt-get install -y php5-mysql
+RUN apt-get install -y php5-gd
 RUN apt-get install -y apache2-utils
 RUN apt-get install -y sendmail
 RUN rm -rf /var/lib/apt/lists/*
