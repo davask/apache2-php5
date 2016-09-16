@@ -25,7 +25,7 @@ if [ "${DWL_INIT}" != "data" ]; then
         service ssh start;
         echo ">> Sendmail started";
         service sendmail start;
-    if [ "`pgrep apache2`" != "" ]; then
+    if [ "`pgrep apache2`" = "" ]; then
         ln -sf /home/${DWL_USER_NAME}/files /home/${DWL_USER_NAME}/html;
         rm -rdf /var/www/html;
         ln -sf /home/${DWL_USER_NAME}/html /var/www/html;
