@@ -27,3 +27,5 @@ RUN /bin/bash -c 'apt-get install -y php5.6-intl'
 RUN /bin/bash -c 'apt-get install -y libapache2-mod-php5.6'
 RUN /bin/bash -c 'apt-get install -y memcached'
 RUN /bin/bash -c 'rm -rf /var/lib/apt/lists/*'
+
+COPY ./tmp/dwl/init.sh /tmp/dwl/init.sh
