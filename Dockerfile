@@ -1,19 +1,29 @@
-FROM davask/d-apache2:latest
+FROM davask/d-apache2:2.4-u14.04
 MAINTAINER davask <contact@davaskweblimited.com>
-
+USER root
 LABEL dwl.app.language="php5"
 
-RUN apt-get update
-RUN apt-get install -y php5
-RUN apt-get install -y libapache2-mod-php5
-RUN apt-get install -y php5-mcrypt
-RUN apt-get install -y php5-mysql
-RUN apt-get install -y php5-gd
-RUN apt-get install -y apache2-utils
-RUN apt-get install -y sendmail
-RUN rm -rf /var/lib/apt/lists/*
-
-# Declare instantiation counter
-ENV DWL_INIT_COUNT 2
-# Copy instantiation specific file
-COPY ./php5.sh $DWL_INIT_DIR/$DWL_INIT_COUNT-php5.sh
+# Update packages
+RUN /bin/bash -c 'apt-get update'
+# INSTALL PHP5.5.9
+# RUN apt-get install -y php5
+# INSTALL PHP5.6.23
+RUN /bin/bash -c 'apt-get install -y software-properties-common'
+RUN /bin/bash -c 'add-apt-repository -y ppa:ondrej/php'
+RUN /bin/bash -c 'apt-get update'
+RUN /bin/bash -c 'apt-get install -y php5.6'
+RUN /bin/bash -c 'apt-get install -y php5.6-mcrypt'
+RUN /bin/bash -c 'apt-get install -y php5.6-mysql'
+RUN /bin/bash -c 'apt-get install -y php5.6-gd'
+RUN /bin/bash -c 'apt-get install -y php5.6-curl'
+RUN /bin/bash -c 'apt-get install -y php5.6-memcached'
+RUN /bin/bash -c 'apt-get install -y php5.6-cli'
+RUN /bin/bash -c 'apt-get install -y php5.6-readline'
+RUN /bin/bash -c 'apt-get install -y php5.6-mysqlnd'
+RUN /bin/bash -c 'apt-get install -y php5.6-json'
+RUN /bin/bash -c 'apt-get install -y php5.6-xsl'
+RUN /bin/bash -c 'apt-get install -y php5.6-xml'
+RUN /bin/bash -c 'apt-get install -y php5.6-intl'
+RUN /bin/bash -c 'apt-get install -y libapache2-mod-php5.6'
+RUN /bin/bash -c 'apt-get install -y memcached'
+RUN /bin/bash -c 'rm -rf /var/lib/apt/lists/*'
