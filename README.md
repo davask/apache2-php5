@@ -1,6 +1,6 @@
 # dockerfile
 
-see [FROM IMAGE README.md](https://github.com/davask/d-apache2)
+see [FROM IMAGE README.md](https://github.com/davask/d-apache)
 
 ### PHP 5 activation
 
@@ -12,4 +12,4 @@ see [FROM IMAGE README.md](https://github.com/davask/d-apache2)
 
 ## LABEL
 
-> dwl.app.language="php5"
+> dwl.app.language="php"

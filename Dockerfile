@@ -1,29 +1,24 @@
-FROM davask/d-apache:2.4-u14.04
+FROM davask/d-apache:2.4-u12.04
 MAINTAINER davask <docker@davaskweblimited.com>
 LABEL dwl.app.language="php5"
 
 # Update packages
 RUN /bin/bash -c 'apt-get update'
 # INSTALL PHP5.5.9
-# RUN apt-get install -y php5
-# INSTALL PHP5.6.23
-RUN /bin/bash -c 'apt-get install -y software-properties-common'
-RUN /bin/bash -c 'add-apt-repository ppa:ondrej/php'
-RUN /bin/bash -c 'apt-get update'
-RUN /bin/bash -c 'apt-get install -y php5.6'
-RUN /bin/bash -c 'apt-get install -y php5.6-mcrypt'
-RUN /bin/bash -c 'apt-get install -y php5.6-mbstring'
-RUN /bin/bash -c 'apt-get install -y php5.6-mysql'
-RUN /bin/bash -c 'apt-get install -y php5.6-gd'
-RUN /bin/bash -c 'apt-get install -y php5.6-curl'
-RUN /bin/bash -c 'apt-get install -y php5.6-memcached'
-RUN /bin/bash -c 'apt-get install -y php5.6-cli'
-RUN /bin/bash -c 'apt-get install -y php5.6-readline'
-RUN /bin/bash -c 'apt-get install -y php5.6-mysqlnd'
-RUN /bin/bash -c 'apt-get install -y php5.6-json'
-RUN /bin/bash -c 'apt-get install -y php5.6-xsl'
-RUN /bin/bash -c 'apt-get install -y php5.6-xml'
-RUN /bin/bash -c 'apt-get install -y php5.6-intl'
+RUN apt-get install -y php
+RUN /bin/bash -c 'apt-get install -y php-mcrypt'
+RUN /bin/bash -c 'apt-get install -y php-mbstring'
+RUN /bin/bash -c 'apt-get install -y php-mysql'
+RUN /bin/bash -c 'apt-get install -y php-gd'
+RUN /bin/bash -c 'apt-get install -y php-curl'
+RUN /bin/bash -c 'apt-get install -y php-memcached'
+RUN /bin/bash -c 'apt-get install -y php-cli'
+RUN /bin/bash -c 'apt-get install -y php-readline'
+RUN /bin/bash -c 'apt-get install -y php-mysqlnd'
+RUN /bin/bash -c 'apt-get install -y php-json'
+RUN /bin/bash -c 'apt-get install -y php-xsl'
+RUN /bin/bash -c 'apt-get install -y php-xml'
+RUN /bin/bash -c 'apt-get install -y php-intl'
 RUN /bin/bash -c 'apt-get install -y libapache2-mod-php5.6'
 RUN /bin/bash -c 'apt-get install -y memcached'
 # sendmail required to use php mail()
