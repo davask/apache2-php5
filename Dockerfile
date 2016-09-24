@@ -1,6 +1,6 @@
 FROM davask/d-apache:2.4-u12.04
 MAINTAINER davask <docker@davaskweblimited.com>
-LABEL dwl.app.language="php5"
+LABEL dwl.app.language="php"
 
 # Update packages
 RUN /bin/bash -c 'apt-get update'
