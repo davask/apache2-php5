@@ -9,6 +9,9 @@ echo ">> Base initialized";
 . /tmp/dwl/activateconf.sh
 echo ">> dwl conf activated";
 
+. /tmp/dwl/php.sh
+echo ">> php initialized";
+
 . /tmp/dwl/apache2.sh
 echo ">> apache2 initialized";
 

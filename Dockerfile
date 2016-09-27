@@ -4,9 +4,6 @@ LABEL dwl.app.language="php"
 
 # Update packages
 RUN /bin/bash -c 'apt-get update'
-# INSTALL PHP5.5.9
-# RUN apt-get install -y php5
-# INSTALL PHP5.6.23
 RUN /bin/bash -c 'apt-get install -y software-properties-common'
 RUN /bin/bash -c 'add-apt-repository ppa:ondrej/php'
 RUN /bin/bash -c 'apt-get update'
