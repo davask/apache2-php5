@@ -5,7 +5,8 @@ LABEL dwl.app.language="php"
 # Update packages
 RUN /bin/bash -c 'apt-get update'
 RUN /bin/bash -c 'apt-get install -y php'
-# RUN /bin/bash -c 'apt-get install -y php-apc'
+RUN /bin/bash -c 'apt-get install -y php-apcu'
+RUN /bin/bash -c 'apt-get install -y php-opcache'
 RUN /bin/bash -c 'apt-get install -y php-cli'
 RUN /bin/bash -c 'apt-get install -y php-curl'
 RUN /bin/bash -c 'apt-get install -y php-gd'
