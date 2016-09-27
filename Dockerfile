@@ -2,6 +2,8 @@ FROM davask/d-apache:2.4-u16.04
 MAINTAINER davask <docker@davaskweblimited.com>
 LABEL dwl.app.language="php"
 
+ENV DWL_DATE_TIMEZONE Europe/Paris
+
 # Update packages
 RUN /bin/bash -c 'apt-get update'
 RUN /bin/bash -c 'apt-get install -y php'
@@ -34,5 +36,6 @@ RUN /bin/bash -c 'rm -rf /var/lib/apt/lists/*'
 RUN /bin/bash -c 'curl -sS https://getcomposer.org/installer | php;'
 RUN /bin/bash -c 'mv composer.phar /usr/local/bin/composer;'
 
+COPY ./tmp/dwl/php.sh /tmp/dwl/php.sh
 COPY ./tmp/dwl/sendmail.sh /tmp/dwl/sendmail.sh
 COPY ./tmp/dwl/init.sh /tmp/dwl/init.sh

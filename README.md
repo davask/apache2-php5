@@ -2,6 +2,12 @@
 
 see [FROM IMAGE README.md](https://github.com/davask/d-apache)
 
+## Default ENV values
+
+### Define PHP date.timezone
+
+> DWL_DATE_TIMEZONE Europe/Paris
+
 ### PHP 5 activation
 
 #### comment
