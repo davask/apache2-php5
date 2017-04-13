@@ -1,4 +1,16 @@
-d-php:
+#/usr/bin/env bash
+
+branch=${1};
+parentRepo=${2};
+parentBranch=${3};
+rootDir=${4};
+buildDir=${5};
+
+######################
+# docker-compose.yml #
+######################
+
+echo "d-php:
   ports:
   - 65500:80/tcp
   - 65502:22/tcp
@@ -21,12 +33,14 @@ d-php:
   log_driver: syslog
   labels:
     io.rancher.scheduler.affinity:host_label: dwl=dwlComPrivate
-  image: davask/d-php:5.6-letsencrypt-a2.4-u14.04
+  image: davask/d-php:${branch}
   hostname: private.davaskweblimited.com
   volumes:
-  - /home/dwl/docker-images/app/d-php/build/home/username/files:/home/username/files
-  - /home/dwl/docker-images/app/d-php/build/home/username/http/app/sites-available:/etc/apache2/sites-available
-  - /home/dwl/docker-images/app/d-php/build/etc/apache2/ssl:/etc/apache2/ssl
-  - /home/dwl/docker-images/app/d-php/build/etc/letsencrypt:/etc/letsencrypt
+  - ${buildDir}/home/username/files:/home/username/files
+  - ${buildDir}/home/username/http/app/sites-available:/etc/apache2/sites-available
+  - ${buildDir}/etc/apache2/ssl:/etc/apache2/ssl
+  - ${buildDir}/etc/letsencrypt:/etc/letsencrypt
   working_dir: /var/www/html
+" > ${rootDir}/docker-compose.yml
 
+echo "docker-compose.yml generated with letsencrypt:${branch}";
