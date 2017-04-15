@@ -22,8 +22,6 @@ d-php:
   hostname: localhost
   net: bridge
   volumes:
-  - /home/dwl/docker-images/app/d-php/build/etc/letsencrypt:/etc/letsencrypt
-  - /home/dwl/docker-images/app/d-php/build/etc/apache2/ssl:/etc/apache2/ssl
   - /home/dwl/docker-images/app/d-php/volumes/proxy/log/localhost/apache2:/var/log/apache2
   - /home/dwl/docker-images/app/d-php/volumes/home/username/http/app/sites-available:/etc/apache2/sites-available
   - /home/dwl/docker-images/app/d-php/volumes/home/username/files:/home/username/files

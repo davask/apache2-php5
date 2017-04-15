@@ -50,4 +50,4 @@ COPY ./build/dwl/sendmail.sh /dwl/sendmail.sh
 COPY ./build/dwl/init.sh /dwl/init.sh
 " >> ${rootDir}/Dockerfile
 
-echo "Dockerfile generated with letsencrypt";
+echo "Dockerfile generated with php";
