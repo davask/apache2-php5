@@ -1,8 +1,19 @@
-# dockerfile
+#/usr/bin/env bash
+
+branch=${1};
+parentBranch=${2};
+rootDir=${3};
+buildDir=${4};
+
+#############
+# README.md #
+#############
+
+echo "# dockerfile
 
 see [FROM IMAGE README.md](https://github.com/davask/d-apache2)
 
-### PHP 5.6 activation
+### PHP ${PHP_VERSION} activation
 
 #### comment
 
@@ -12,5 +23,7 @@ see [FROM IMAGE README.md](https://github.com/davask/d-apache2)
 
 ## LABEL
 
-> dwl.app.language="php5.6"
+> dwl.app.language=\"php${PHP_VERSION}\"
+" > ${rootDir}/README.md
 
+echo "README.md generated with php:${branch}";
