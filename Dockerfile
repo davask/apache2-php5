@@ -4,6 +4,7 @@ LABEL dwl.app.language="php5.6"
 
 # Update packages
 RUN apt-get update
+RUN apt-get install -y software-properties-common
 
 # INSTALL PHP5.5.9 - see http://packages.ubuntu.com/search?keywords=php5
 # RUN apt-get install -y php5
