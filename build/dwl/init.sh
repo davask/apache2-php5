@@ -1,23 +1,27 @@
+#! /bin/bash
+
 dwlDir="/dwl";
 
 . ${dwlDir}/envvar.sh
 . ${dwlDir}/user.sh
 . ${dwlDir}/ssh.sh
-
 echo ">> Ubuntu initialized";
 
 echo ">> Base initialized";
 
 . ${dwlDir}/permission.sh
-echo ">> permission assigned";
+echo ">> Permission assigned";
 
 . ${dwlDir}/activateconf.sh
-echo ">> dwl conf activated";
+echo ">> Dwl conf activated";
+
+. ${dwlDir}/virtualhost.sh
+echo ">> Virtualhost generic update";
 
 . ${dwlDir}/apache2.sh
-echo ">> apache2 initialized";
+echo ">> Apache2 initialized";
 
 . ${dwlDir}/sendmail.sh
-echo ">> sendmail initialized";
+echo ">> Sendmail initialized";
 
 . ${dwlDir}/keeprunning.sh
