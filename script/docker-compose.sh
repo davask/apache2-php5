@@ -29,6 +29,7 @@ echo "d-php:
     DWL_SSLKEY_CN: davaskweblimited.com
     DWL_CERTBOT_EMAIL: docker@davaskweblimited.com
     DWL_CERTBOT_DEBUG: 'false'
+    DWL_PHP_DATETIMEZONE: Europe/Paris
   image: davask/d-php:${branch}
   hostname: localhost
   net: bridge

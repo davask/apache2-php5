@@ -2,7 +2,6 @@ FROM davask/d-apache:2.4-u14.04
 MAINTAINER davask <docker@davaskweblimited.com>
 LABEL dwl.app.language="php5.6"
 
-
 ENV DWL_PHP_VERSION 5.6
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 

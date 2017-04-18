@@ -13,7 +13,6 @@ echo "FROM davask/d-apache:${parentBranch}
 MAINTAINER davask <docker@davaskweblimited.com>
 LABEL dwl.app.language=\"php${PHP_VERSION}\"" > ${rootDir}/Dockerfile
 echo "
-
 ENV DWL_PHP_VERSION ${PHP_VERSION}
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
