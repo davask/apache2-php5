@@ -5,7 +5,8 @@
     "logo": "http://www.pngall.com/wp-content/uploads/2016/05/PHP-Logo.png",
     "image": "davask/d-php:5.6-a2.4-u14.04",
     "ports": [
-        "22/tcp"
+        "22/tcp",
+        "80/tcp"
     ],
     "env": [
         {
@@ -38,32 +39,12 @@
         },{
             "name": "DWL_HTTP_SHIELD",
             "label": "htpasswd activated [false]"
-        },{
-            "name": "DWL_SSLKEY_C",
-            "label": "Country Name (2 letter code) [EU]"
-        },{
-            "name": "DWL_SSLKEY_ST",
-            "label": "State or Province Name (full name) [France]"
-        },{
-            "name": "DWL_SSLKEY_L",
-            "label": "Locality Name (eg, city) [Vannes]"
-        },{
-            "name": "DWL_SSLKEY_O",
-            "label": "Organization Name (eg, company) [davask web limited - docker container]"
-        },{
-            "name": "DWL_SSLKEY_CN",
-            "label": "Common Name (e.g. server FQDN or YOUR name) [davaskweblimited.com]"
-        },{
-            "name": "DWL_CERTBOT_DEBUG",
-            "label": "Certbot debug mode [true]"
         }
     ],
     "volumes": [
-        "/home/username,
-/var/log/apache2,
-/etc/apache2/sites-available,
-/etc/apache2/ssl,
-/etc/letsencrypt"
+        "/home/username",
+        "/var/log/apache2",
+        "/etc/apache2/sites-available"
     ]
   }
 ]
