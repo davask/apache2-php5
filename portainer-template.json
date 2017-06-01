@@ -1,9 +1,9 @@
 [
   {
     "title": "PHP 5.6",
-    "description": "PHP 5.6 + Apache 2.4 + ubuntu 14.04",
+    "description": "PHP 5.6 + a2.4 + d8.8",
     "logo": "http://www.pngall.com/wp-content/uploads/2016/05/PHP-Logo.png",
-    "image": "davask/d-php:5.6-a2.4-u14.04",
+    "image": "davask/d-php:5.6-a2.4-d8.8",
     "ports": [
         "22/tcp",
         "80/tcp",
@@ -61,7 +61,7 @@
         }
     ],
     "volumes": [
-        "/home/username",
+        "/home/admin",
         "/var/log/apache2",
         "/etc/apache2/sites-available",
         "/etc/apache2/ssl",
