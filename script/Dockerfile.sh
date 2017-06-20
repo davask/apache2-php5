@@ -18,17 +18,16 @@ ENV DWL_PHP_VERSION ${PHP_VERSION}
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
 # Update packages
-RUN apt-get update && apt-get install -y \
-php${PHP_VERSION:0:1} \
+RUN apt-get update && apt-get install -y php${PHP_VERSION:0:1} \
 php${PHP_VERSION:0:1}-mcrypt \
 php${PHP_VERSION:0:1}-mysql \
 php${PHP_VERSION:0:1}-gd \
 php${PHP_VERSION:0:1}-curl \
 php${PHP_VERSION:0:1}-memcached \
-php${PHP_VERSION:0:1}-cli
+php${PHP_VERSION:0:1}-cli \
 php${PHP_VERSION:0:1}-readline \
 php${PHP_VERSION:0:1}-mysqlnd \
-php${PHP_VERSION:0:1}-json
+php${PHP_VERSION:0:1}-json \
 php${PHP_VERSION:0:1}-intl \
 libapache2-mod-php${PHP_VERSION:0:1} \
 memcached
