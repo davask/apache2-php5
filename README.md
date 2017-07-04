@@ -1,16 +1,39 @@
 # dockerfile
 
-see [FROM IMAGE README.md](https://github.com/davask/d-apache2)
+## Exposed port
 
-### PHP 5.6 activation
+- 22
+- 80
+## Default ENV values
 
-#### comment
+- DWL_LOCAL_LANG: 'en_US:en'
+- DWL_LOCAL: 'en_US.UTF-8'
+- DWL_USER_NAME: 'username'
+- DWL_SSH_ACCESS: 'false'
+- DWL_USER_ID: '1000'
+- DWL_USER_PASSWD: 'secret'
+- APACHE_LOCK_DIR: '/var/lock/apache2'
+- APACHE_PID_FILE: '/var/run/apache2.pid'
+- APACHE_RUN_USER: 'www-data'
+- APACHE_RUN_GROUP: 'www-data'
+- APACHE_LOG_DIR: '/var/log/apache2'
+- APACHE_RUN_DIR: '/var/run/apache2'
+- DWL_HTTP_SERVERADMIN: 'admin@localhost'
+- DWL_HTTP_DOCUMENTROOT: '/var/www/html'
+- DWL_HTTP_SHIELD: 'false'
+- DWL_PHP_DATETIMEZONE: 'Europe/Paris'
+## Available volumes
 
-- to avoid init error all conf file in /etc/apache2/sites-available have to be in the format of sub.domain.ext.conf like docker.davaskweblimited.com.conf
-
-- On start all *.conf in /etc/apache2/sites-available are enabled
-
+- /home/username
+- /var/log/apache2
+- /etc/apache2/sites-available
 ## LABEL
 
-> dwl.app.language="php5.6"
+- dwl.server.os="apache 5.6-a2.4-d8.8"
+
+- dwl.server.base="php 5.6-a2.4-d8.8"
+
+- dwl.server.http="apache 5.6-a2.4-d8.8"
+
+## EXTRA
 

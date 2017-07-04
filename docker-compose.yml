@@ -1,30 +1,25 @@
-d-php:
+app:
   ports:
-  - 65500:80/tcp
-  - 65502:22/tcp
-  - 65503:443/tcp
+    - 42002:22/tcp
+    - 42000:80/tcp
   environment:
-    DWL_LOCAL: en_US.UTF-8
+    DWL_LOCAL_LANG: 'en_US:en'
+    DWL_LOCAL: 'en_US.UTF-8'
+    DWL_USER_NAME: 'username'
+    DWL_SSH_ACCESS: 'false'
     DWL_USER_ID: '1000'
-    DWL_USER_PASSWD: secret
-    DWL_LOCAL_LANG: en_US:en
-    DWL_USER_NAME: username
-    DWL_SSH_ACCESS: 'true'
-    DWL_SHIELD_HTTP: 'false'
-    DWL_SSLKEY_C: EU
-    DWL_SSLKEY_ST: France
-    DWL_SSLKEY_L: Vannes
-    DWL_SSLKEY_O: davask web limited - docker container
-    DWL_SSLKEY_CN: davaskweblimited.com
-    DWL_CERTBOT_EMAIL: docker@davaskweblimited.com
-    DWL_CERTBOT_DEBUG: 'false'
-    DWL_PHP_DATETIMEZONE: Europe/Paris
-  image: davask/d-php:5.6-a2.4-d8.8
+    DWL_USER_PASSWD: 'secret'
+    DWL_HTTP_SERVERADMIN: 'admin@localhost'
+    DWL_HTTP_DOCUMENTROOT: '/var/www/html'
+    DWL_HTTP_SHIELD: 'false'
+    DWL_PHP_DATETIMEZONE: 'Europe/Paris'
+  tty: true
   hostname: localhost
+  image: davask/d-php:5.6-a2.4-d8.8
   net: bridge
   volumes:
-  - /home/dwl/docker-images/app/d-php/volumes/home/username/log/localhost/apache2:/var/log/apache2
-  - /home/dwl/docker-images/app/d-php/volumes/home/username/http/app/sites-available:/etc/apache2/sites-available
-  - /home/dwl/docker-images/app/d-php/volumes/home/username/files:/home/username/files
-  working_dir: /var/www/html
+    - ./volumes/home/username:/home/username
+    - ./volumes/var/log/apache2:/var/log/apache2
+    - ./volumes/etc/apache2/sites-available:/etc/apache2/sites-available
 
+# export COMPOSE_HTTP_TIMEOUT=600; docker-compose -f /home/dwl/docker-images/app/d-php/docker-compose.yml up -d
