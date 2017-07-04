@@ -29,11 +29,11 @@
 - /etc/apache2/sites-available
 ## LABEL
 
-- dwl.server.os="apache 5.6-a2.4-u14.04"
+- dwl.server.os="apache 5.6-a2.4-u16.04"
 
-- dwl.server.base="php 5.6-a2.4-u14.04"
+- dwl.server.base="php 5.6-a2.4-u16.04"
 
-- dwl.server.http="apache 5.6-a2.4-u14.04"
+- dwl.server.http="apache 5.6-a2.4-u16.04"
 
 ## EXTRA
 
