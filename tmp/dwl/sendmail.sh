@@ -1,1 +1,0 @@
-service sendmail start;
