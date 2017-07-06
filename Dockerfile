@@ -33,6 +33,9 @@ php5-readline \
 php5-mysqlnd \
 php5-json \
 php5-intl \
+php5-common \
+php5-opcache \
+libssl1.1.0 \
 libapache2-mod-php5 \
 libapache2-mod-fastcgi \
 memcached
