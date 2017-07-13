@@ -18,6 +18,7 @@ services:
       DWL_HTTP_SHIELD: 'false'
       DWL_PHP_DATETIMEZONE: 'Europe/Paris'
     tty: true
+    stdin_open: true
     hostname: localhost
     image: davask/d-php:5.6-a2.4-d8.8
     networks:
@@ -31,4 +32,6 @@ networks:
         external: true
 
 # docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 dwlhost
-# export COMPOSE_HTTP_TIMEOUT=600; docker-compose -f /home/dwl/docker-images/app/d-php/docker-compose.yml up -d
+# export COMPOSE_HTTP_TIMEOUT=600;
+# docker exec -ti proxy_reverse_1 sh -c 'bash /dwl/init.sh'
+# docker-compose -f /home/dwl/docker-images/app/d-php/docker-compose.yml up -d
