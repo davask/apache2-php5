@@ -1,5 +1,14 @@
 # dockerfile
 
+[![[dwl] php:5.6-a2.4-d8.8 in prod][badge-shields]](https://hub.docker.com/r/davask/d-php/)
+[![[dwl] php:5.6-a2.4-d8.8 license][badge-fossa]](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fdavask%2Fd-php?ref=badge_shield)
+
+[![[dwl] php:5.6-a2.4-d8.8 image][badge-docker]](https://hub.docker.com/r/davask/d-php/)
+
+[badge-docker]: https://dockeri.co/image/davask/d-php "[dwl] php:5.6-a2.4-d8.8 image"
+[badge-shields]: https://img.shields.io/badge/davask%2Fd--php-env_prod-brightgreen.svg?style=flat "[dwl] php:5.6-a2.4-d8.8 in prod"
+[badge-fossa]: https://img.shields.io/badge/davask%2Fd--php-license_MIT-brightgreen.svg?style=flat "[dwl] php:5.6-a2.4-d8.8 license"
+
 ## Exposed port
 
 - 22
