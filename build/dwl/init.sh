@@ -9,19 +9,23 @@ dwlDir="/dwl";
 . ${dwlDir}/ssh.sh
 echo ">> Os initialized";
 
+if [ ! -f /home/${DWL_USER_NAME}/.bash_profile ]; then
+    sudo cp /home/admin/.bash_profile /home/${DWL_USER_NAME};
+fi
 echo ">> Base initialized";
 
 . ${dwlDir}/permission.sh
 echo ">> Permission assigned";
 
-. ${dwlDir}/activateconf.sh
-echo ">> Dwl conf activated";
-
-. ${dwlDir}/virtualhost.sh
-echo ">> Virtualhost generic update";
-
 . ${dwlDir}/apache2.sh
 echo ">> Apache2 initialized";
+
+if [ "${DWL_APACHEGUI}" == "true" ]; then
+    cd /opt/ApacheGUI/bin;
+    ./run.sh
+    echo ">> ApacheGUI started";
+    cd ~/
+fi
 
 . ${dwlDir}/php.sh
 echo ">> Php initialized";
@@ -29,8 +33,6 @@ echo ">> Php initialized";
 . ${dwlDir}/custom.sh
 echo ">> custom initialized";
 
-# . ${dwlDir}/senmail.sh
-# sendmail is only available from davask/d-php*
 if [ "`dpkg --get-selections | awk '{print $1}' | grep sendmail$ | wc -l`" == "1" ]; then
   sudo service sendmail start;
   echo ">> Sendmail initialized";

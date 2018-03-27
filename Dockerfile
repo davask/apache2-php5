@@ -1,11 +1,10 @@
-FROM davask/d-apache:2.4-d8.8
+FROM davask/d-http:a2.4-d8.x
 MAINTAINER davask <docker@davaskweblimited.com>
 USER root
-LABEL dwl.app.language="php7.0"
+LABEL dwl.app.language="php 7.0"
 
 ENV DWL_PHP_VERSION 7.0
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
-
 
 RUN sed -i 's|^deb http://deb.debian.org/debian jessie main|deb http://deb.debian.org/debian jessie main contrib non-free|g' /etc/apt/sources.list; \
 sed -i 's|^deb http://deb.debian.org/debian jessie-updates main|deb http://deb.debian.org/debian jessie-updates main contrib non-free|g' /etc/apt/sources.list; \
