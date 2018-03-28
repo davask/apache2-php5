@@ -33,6 +33,8 @@ php7.0-intl \
 php7.0-common \
 php7.0-xml \
 php7.0-opcache \
+php7.0-mbstring \
+php7.0-zip \
 libssl1.1 \
 libapache2-mod-php7.0 \
 libapache2-mod-fastcgi \
@@ -45,10 +47,15 @@ RUN apt-get install -y \
 sendmail-bin \
 sendmail
 
-RUN apt-get upgrade -y && \
-apt-get autoremove -y && \
-apt-get clean && \
+RUN apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig);
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');";
+RUN ACTUAL_SIGNATURE=$(php -r "echo hash_file('SHA384', 'composer-setup.php');");
+RUN php composer-setup.php; \
+mv composer.phar /usr/local/bin/composer;
+RUN php -r "unlink('composer-setup.php');";
 
 COPY ./build/dwl/php.sh \
 ./build/dwl/init.sh \
