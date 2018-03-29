@@ -38,7 +38,8 @@ php7.0-zip \
 libssl1.1 \
 libapache2-mod-php7.0 \
 libapache2-mod-fastcgi \
-memcached
+memcached \
+mysql-client
 
 RUN a2enmod actions fastcgi alias proxy_fcgi setenvif
 RUN a2enconf php7.0-fpm
